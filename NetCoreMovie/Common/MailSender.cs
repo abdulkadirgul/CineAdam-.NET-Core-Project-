@@ -10,7 +10,7 @@ namespace Common
 {
     public class MailSender
     {
-        public static void SendEmail(string email,string subject,string message)
+        public static void SendEmail(string email, string subject, string message)
         {
             //MailMessage
             MailMessage sender = new MailMessage();

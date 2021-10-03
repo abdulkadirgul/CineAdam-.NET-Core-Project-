@@ -1,0 +1,48 @@
+﻿@model DataAccess.Entity.Saloon
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="container">
+
+    <div class="card">
+        <div class="card-header">
+            <h2 class="card-title">Salon Ekle</h2>
+        </div>
+        <div class="card-body">
+            <div asp-validation-summary="All" class="text-danger">
+
+            </div>
+            <form asp-action="PostSaloon" asp-controller="Saloon" method="POST">
+                
+
+                    <div class="col-sm-6 mb-2">
+
+                        <label>Salon Adı : </label>
+                        <input asp-for="SaloonName" class="form-control" placeholder="Salon adını giriniz">
+                    </div>
+                    <div class="col-sm-6 mb-2">
+
+                        <label>Kapasitesi : </label>
+                        <input asp-for="Capacity" class="form-control" placeholder="Kapasiteyi giriniz">
+                    </div>
+                    <div class="col-sm-6 mb-2">
+
+                        <label>Aktif Mi?</label>
+                        <input asp-for="IsActive" class="radio-button lg">
+                    </div>
+
+
+
+               
+
+                <button class="btn btn-primary float-end" type="submit">Ekle</button>
+            </form>
+        </div>
+    </div>
+
+
+
+</div>

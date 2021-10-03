@@ -1,0 +1,59 @@
+﻿@model List<DataAccess.Entity.Saloon>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h2>Salonlar</h2>
+        <a asp-action="PostSaloon" asp-controller="Saloon" class="btn btn-primary float-right">Salon Ekle</a>
+    </div>
+    <div class="card-body">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Salon Adı</th>
+                    <th>Kapasite</th>
+                    <th>Durum</th>
+                    <th>İşlem</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var salon in Model)
+                {
+                <tr>
+                    <td>@salon.Id</td>
+                    <td>@salon.SaloonName</td>
+                    <td>@salon.Capacity Kişi</td>
+                    <td>
+                        @{
+                            if (salon.IsActive)
+                            {
+                                <span class="badge badge-success">Aktif</span>
+                            }
+                            else
+                            {
+                                <span class="badge badge-danger">Pasif</span>
+                            }
+                        }
+                    </td>
+                    
+                    <td>
+                        <form asp-action="DeleteSaloon" method="post">
+
+                            <input  type="hidden" name="id" value="@salon.Id" />
+                            <button type="submit" class="btn btn-danger" > Salonu sil </button>
+
+                            <a asp-action="UpdateSaloon" asp-controller="Saloon" asp-route-id="@salon.Id" type="submit" class="btn btn-warning">Güncelle </a>
+
+                        </form>
+                    </td>
+                    
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

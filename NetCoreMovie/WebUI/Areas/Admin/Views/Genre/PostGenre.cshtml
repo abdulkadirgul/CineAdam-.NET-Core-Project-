@@ -1,0 +1,43 @@
+﻿@model DataAccess.Entity.Genre
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="container">
+
+    <div class="card">
+        <div class="card-header">
+            <h2 class="card-title">Tür Ekle</h2>
+        </div>
+        <div class="card-body">
+            <div asp-validation-summary="All" class="text-danger">
+
+            </div>
+            <form asp-action="PostGenre" asp-controller="Genre" method="POST">
+                <div class="row">
+
+                    <div class="col-sm-6 mb-2">
+
+
+                        <input asp-for="GenreName" class="form-control" placeholder="Tür adını giriniz">
+                    </div>
+                    <div class="col-sm-6 mb-2">
+
+
+                        <input asp-for="IsActive" class="radio-button lg">
+                    </div>
+                  
+
+
+                </div>
+                
+                <button class="btn btn-primary float-end" type="submit">Ekle</button>
+            </form>
+        </div>
+    </div>
+
+
+
+</div>

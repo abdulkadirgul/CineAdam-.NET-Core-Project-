@@ -11,6 +11,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
+using Service.IRepository;
+using Service.Repository;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -31,6 +33,8 @@ namespace WebUI
         
         public void ConfigureServices(IServiceCollection services)
         {
+            //Repository baðýmlýlýklarý burada dahil edilecek. services.AddTransient<IGenreRepository,GenreRepository>();
+
             services.AddDbContext<MovieContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("WebUI")));
             services.AddIdentity<AppUser, IdentityRole>(x =>
             {
@@ -52,6 +56,13 @@ namespace WebUI
                 x.SlidingExpiration = true;
                 x.ExpireTimeSpan = TimeSpan.FromMinutes(1);
             });
+
+
+            services.AddTransient<IGenreRepository, GenreRepository>();
+            services.AddTransient<IMovieRepository, MovieRepository>();
+            services.AddTransient<ISaloonRepository, SaloonRepository>();
+
+
             services.AddControllersWithViews();
 
             services.AddControllersWithViews();
@@ -80,14 +91,20 @@ namespace WebUI
             //});
 
             app.UseRouting();
+            app.UseAuthentication();
 
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
+
                 endpoints.MapControllerRoute(
             name: "areas",
             pattern: "{area:exists}/{Controller=Home}/{Action=Index}/{id?}"
+        );
+                endpoints.MapControllerRoute(
+            name: "account",
+            pattern: "{Controller=Account}/{Action=Profile}/{Name}"
         );
                 endpoints.MapControllerRoute(
                     name: "default",
