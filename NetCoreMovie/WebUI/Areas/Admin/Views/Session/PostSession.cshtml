@@ -1,0 +1,44 @@
+﻿@model DataAccess.Entity.Session
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="container">
+
+    <div class="card">
+        <div class="card-header">
+            <h2 class="card-title">Seans Ekle</h2>
+        </div>
+        <div class="card-body">
+            <div asp-validation-summary="All" class="text-danger">
+
+            </div>
+            <form asp-action="PostSession" asp-controller="Session" method="POST">
+
+
+                <div class="col-sm-6 mb-2">
+
+                    <label>Salon Adı : </label>
+                    <input asp-for="SessionTime" class="form-control" placeholder="Seans giriniz">
+                </div>
+                
+                <div class="col-sm-6 mb-2">
+
+                    <label>Aktif Mi?</label>
+                    <input asp-for="IsActive" class="radio-button lg">
+                </div>
+
+
+
+
+
+                <button class="btn btn-primary float-end" type="submit">Ekle</button>
+            </form>
+        </div>
+    </div>
+
+
+
+</div>

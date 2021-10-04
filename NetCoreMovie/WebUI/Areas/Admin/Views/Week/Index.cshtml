@@ -1,0 +1,60 @@
+﻿@model List<DataAccess.Entity.Week>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h2>Haftalar</h2>
+        <a asp-action="PostWeek" asp-controller="Week" class="btn btn-primary float-right">Salon Ekle</a>
+    </div>
+    <div class="card-body">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>İlk Gösterim</th>
+                    <th>Son Gösterim</th>
+                    <th>Durum</th>
+                    <th>İşlem</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var week in Model)
+                {
+                    <tr>
+                        <td>@week.Id</td>
+                        <td>@week.FirstDay</td>
+                        <td>@week.LastDay </td>
+                        <td>
+                            @{
+                                if (week.IsActive)
+                                {
+                                    <span class="badge badge-success">Aktif</span>
+                                }
+                                else
+                                {
+                                    <span class="badge badge-danger">Pasif</span>
+                                }
+                            }
+                        </td>
+
+                        <td>
+                            <form asp-action="DeleteWeek" method="post">
+
+                                <input type="hidden" name="id" value="@week.Id" />
+                                <button type="submit" class="btn btn-danger"> Salonu sil </button>
+
+                                <a asp-action="UpdateWeek" asp-controller="Week" asp-route-id="@week.Id" type="submit" class="btn btn-warning">Güncelle </a>
+
+                            </form>
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

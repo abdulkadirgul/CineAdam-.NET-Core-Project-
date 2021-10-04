@@ -664,3 +664,10 @@ C:\Users\Monster\Desktop\MyMovieTheather .NET-CORE\NetCoreMovie\WebUI\obj\Debug\
 C:\Users\Monster\Desktop\MyMovieTheather .NET-CORE\NetCoreMovie\WebUI\obj\Debug\net5.0\Razor\Areas\Admin\Views\Saloon\PostSaloon.cshtml.g.cs
 C:\Users\Monster\Desktop\MyMovieTheather .NET-CORE\NetCoreMovie\WebUI\obj\Debug\net5.0\Razor\Areas\Admin\Views\Saloon\Index.cshtml.g.cs
 C:\Users\Monster\Desktop\MyMovieTheather .NET-CORE\NetCoreMovie\WebUI\obj\Debug\net5.0\Razor\Areas\Admin\Views\Saloon\UpdateSaloon.cshtml.g.cs
+C:\Users\Monster\Desktop\MyMovieTheather .NET-CORE\NetCoreMovie\WebUI\obj\Debug\net5.0\Razor\Areas\Admin\Views\Week\Index.cshtml.g.cs
+C:\Users\Monster\Desktop\MyMovieTheather .NET-CORE\NetCoreMovie\WebUI\obj\Debug\net5.0\Razor\Areas\Admin\Views\Week\PostWeek.cshtml.g.cs
+C:\Users\Monster\Desktop\MyMovieTheather .NET-CORE\NetCoreMovie\WebUI\obj\Debug\net5.0\Razor\Areas\Admin\Views\Week\UpdateWeek.cshtml.g.cs
+C:\Users\Monster\Desktop\MyMovieTheather .NET-CORE\NetCoreMovie\WebUI\obj\Debug\net5.0\Razor\Areas\Admin\Views\Session\Index.cshtml.g.cs
+C:\Users\Monster\Desktop\MyMovieTheather .NET-CORE\NetCoreMovie\WebUI\obj\Debug\net5.0\Razor\Areas\Admin\Views\Session\PostSession.cshtml.g.cs
+C:\Users\Monster\Desktop\MyMovieTheather .NET-CORE\NetCoreMovie\WebUI\obj\Debug\net5.0\Razor\Areas\Admin\Views\Session\UpdateSession.cshtml.g.cs
+C:\Users\Monster\Desktop\MyMovieTheather .NET-CORE\NetCoreMovie\WebUI\obj\Debug\net5.0\Razor\Areas\User\Views\Home\Index.cshtml.g.cs

@@ -62,7 +62,7 @@ namespace WebUI.Controllers
                 var result = await userManager.CreateAsync(newUser, registerVM.Password);
                 if (result.Succeeded)
                 {
-                    string mailMessage = $"Merhaba {newUser.UserName}!\nüye olduğunuz için teşekkür ederiz. Lütfen aşağıda gönderilen linki tıklayarak hesabınızı aktif hale getirin.\nhttps://localhost:31685/Home/Activation/{newUser.ActivationCode}";
+                    string mailMessage = $"Merhaba {newUser.UserName}!\nüye olduğunuz için teşekkür ederiz. Lütfen aşağıda gönderilen linki tıklayarak hesabınızı aktif hale getirin.\nhttps://localhost:44347/Home/Activation/{newUser.ActivationCode}";
                     MailSender.SendEmail(registerVM.Email, "Hesap Aktivasyon", mailMessage);
 
                     return RedirectToAction("PendingAccount", newUser);

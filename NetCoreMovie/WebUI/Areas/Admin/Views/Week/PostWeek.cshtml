@@ -1,0 +1,48 @@
+﻿@model DataAccess.Entity.Week
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="container">
+
+    <div class="card">
+        <div class="card-header">
+            <h2 class="card-title">Salon Ekle</h2>
+        </div>
+        <div class="card-body">
+            <div asp-validation-summary="All" class="text-danger">
+
+            </div>
+            <form asp-action="PostWeek" asp-controller="Week" method="POST">
+
+
+                <div class="col-sm-6 mb-2">
+
+                    <label>Salon Adı : </label>
+                    <input asp-for="FirstDay" class="form-control" placeholder="İlk Gösterim terihi giriniz">
+                </div>
+                <div class="col-sm-6 mb-2">
+
+                    <label>Kapasitesi : </label>
+                    <input asp-for="LastDay" class="form-control" placeholder="Son Gösterim giriniz">
+                </div>
+                <div class="col-sm-6 mb-2">
+
+                    <label>Aktif Mi?</label>
+                    <input asp-for="IsActive" class="radio-button lg">
+                </div>
+
+
+
+
+
+                <button class="btn btn-primary float-end" type="submit">Ekle</button>
+            </form>
+        </div>
+    </div>
+
+
+
+</div>

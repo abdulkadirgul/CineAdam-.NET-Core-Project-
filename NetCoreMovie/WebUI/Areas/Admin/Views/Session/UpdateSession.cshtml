@@ -1,0 +1,23 @@
+﻿@model DataAccess.Entity.Session
+@{
+    ViewData["Title"] = "UpdateSaloon";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="m-4">
+    <form asp-action="UpdateSession" method="post">
+
+        <div class="form-group">
+            <label asp-for="SessionTime">Seans : </label>
+            <input asp-for="SessionTime" class="form-control" />
+
+            
+
+            <label asp-for="IsActive">Aktif mi? </label>
+            <input asp-for="IsActive" class="radio-button" />
+
+            <button type="submit" value="Submit" class="btn btn-success"> Güncelle </button>
+        </div>
+
+    </form>
+</div>
